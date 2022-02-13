@@ -21,8 +21,6 @@ export default function SubscriptionCard(props) {
   const {
     id,
     subscriptionName,
-    createdAt,
-    username,
     price,
     isSuspended,
     firstPayment,
