@@ -2,8 +2,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import moment from "moment";
-import { Circle } from "react-feather";
-
 
 const pageVariants = {
   initial: {
@@ -18,13 +16,7 @@ const pageVariants = {
 };
 
 export default function SubscriptionCard(props) {
-  const {
-    id,
-    subscriptionName,
-    price,
-    isSuspended,
-    firstPayment,
-  } = props.sub;
+  const { id, subscriptionName, price, isSuspended, firstPayment } = props.sub;
 
   const formatter = new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -75,14 +67,26 @@ export default function SubscriptionCard(props) {
               </h1>
             ) : (
               <div className="flex flex-col justify-center">
-                <h1 className="text-lg font-semibold">
-                  {subscriptionName}
-                </h1>
+                <h1 className="text-lg font-semibold">{subscriptionName}</h1>
                 <span className="flex items-center gap-2 text-sm">
-                <Circle
-                        size={16}
-                        className="fill-green-400 stroke-transparent"
-                      />
+                  <svg
+                    height="14"
+                    width="14"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <defs>
+                      <linearGradient
+                        id="header-shape-gradient"
+                        x2="0.35"
+                        y2="1"
+                      >
+                        <stop offset="0%" stop-color="var(--color-stop)" />
+                        <stop offset="30%" stop-color="var(--color-stop)" />
+                        <stop offset="100%" stop-color="var(--color-bot)" />
+                      </linearGradient>
+                    </defs>
+                    <circle cx="7" cy="7" r="7" className="gradient-bg" />
+                  </svg>
                   Due{" "}
                   {moment(firstPayment)
                     .add(getMonthsOfset(Date.now(), firstPayment), "months")

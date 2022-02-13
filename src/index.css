@@ -11,3 +11,12 @@
 body {
     background-color: #f9f9fa;
 }
+
+.gradient-bg {
+    fill: url(#header-shape-gradient) #fff;
+  }
+  
+  #header-shape-gradient {
+    --color-stop: #15ad3b;
+    --color-bot: #29f55c;
+  }
