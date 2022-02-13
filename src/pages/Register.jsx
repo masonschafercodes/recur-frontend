@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import React from "react";
 
 import { AuthContext } from "../context/auth";
+import { Oval } from "react-loader-spinner";
+
 
 export default function Register(props) {
   const context = React.useContext(AuthContext);
@@ -20,7 +22,7 @@ export default function Register(props) {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
 
-  const [addUser] = useMutation(REGISTER_USER, {
+  const [addUser, {loading}] = useMutation(REGISTER_USER, {
     update(_, result) {
       context.login(result.data.register);
       navigate("/subscriptions", { replace: true });
@@ -116,12 +118,21 @@ export default function Register(props) {
             </div>
           </div>
           <div className="flex w-full my-4 items-center justify-center">
-            <button
+            {!loading ? (
+              <button
               type="submit"
               className="my-3 py-2 px-4 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 text-white focus:ring-purple-500 focus:ring-offset-purple-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-full "
             >
               Register
             </button>
+            ) : (
+              <span
+              className="flex items-center justify-center my-3 py-2 px-4 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 text-white focus:ring-purple-500 focus:ring-offset-purple-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-full "
+            >
+              <Oval color="white" height={18} width={18} />
+            </span>
+            )}
+            
           </div>
           <div>
             {Object.keys(errors).length > 0 && (

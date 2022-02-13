@@ -101,7 +101,7 @@ const Layout = () => {
               </svg>
             </div>
             <div className="ml-8">
-              <h1 className="text-bold text-3xl text-black">recur</h1>
+              <h1 className="text-bold text-3xl text-black">recurrence</h1>
             </div>
           </div>
         </Link>
