@@ -118,7 +118,7 @@ export default function Subscription() {
                 {formatter.format(data.getSubscription.price)}{" "}
                 <span className="hidden lg:inline text-2xl mx-1">/ month</span>
               </h1>
-              <div className="mt-3">
+              <div className="mt-3 mr-2">
                 {data.getSubscription.isSuspended ? (
                   <span className="text-sm bg-white text-black uppercase px-2 py-1 rounded font-semibold">
                     inactive
