@@ -8,7 +8,7 @@ const Layout = () => {
   const { user, logout } = React.useContext(AuthContext);
 
   const Layout = user ? (
-    <nav className="flex bg-slate-50 flex-wrap items-center justify-between my-3 w-3/5 mx-auto p-2 font-mono">
+    <nav className="hideen lg:flex bg-slate-50 flex-wrap items-center justify-between my-3 w-3/5 mx-auto p-2 font-mono">
       <div className="navbar-menu hidden lg:order-1 lg:block w-full lg:w-2/5">
         <Link
           className="block lg:inline-block mt-4 lg:mt-0 mr-10 text-purple-900 text-xl font-semibold hover:text-purple-600"

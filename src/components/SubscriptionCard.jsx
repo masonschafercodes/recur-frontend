@@ -62,13 +62,13 @@ export default function SubscriptionCard(props) {
           </div>
           <div className="flex items-center w-full h-12 rounded-2xl">
             {isSuspended ? (
-              <h1 className="text-gray-400 p-3 text-lg font-semibold">
+              <h1 className="text-gray-400 text-lg font-semibold">
                 {subscriptionName}
               </h1>
             ) : (
               <div className="flex flex-col justify-center">
                 <h1 className="text-lg font-semibold">{subscriptionName}</h1>
-                <span className="flex items-center gap-2 text-sm">
+                <span className="lg:flex items-center gap-2 text-sm hidden">
                   <svg
                     height="14"
                     width="14"
@@ -96,7 +96,7 @@ export default function SubscriptionCard(props) {
               </div>
             )}
             {isSuspended ? (
-              <p className="uppercase bg-gray-200 text-xs font-bold p-1 rounded">
+              <p className="hidden lg:block uppercase bg-gray-200 text-xs font-bold p-1 rounded">
                 inactive
               </p>
             ) : null}

@@ -30,10 +30,10 @@ export default function Home() {
     initial="initial"
     animate="in"
     exit="out"
-    variants={pageVariants}>
-      <div className="flex flex-wrap items-center justify-center my-3 py-10 w-full mx-autofont-mono bg-gradient-to-t from-blue-200">
-        <div className="overflow-hidden relative w-3/5">
-          <div className="text-start w-1/2 py-12 px-4 sm:px-6 lg:py-16 lg:px-8 z-20">
+    variants={pageVariants} className="w-full">
+      <div className="flex flex-wrap items-center justify-center my-3 py-10 w-full lg:mx-auto bg-gradient-to-t from-blue-200">
+        <div className="overflow-hidden relative w-full lg:w-3/5 flex flex-row items-center jusify-center">
+          <div className="text-start w-full lg:w-1/2 py-12 px-4 sm:px-6 lg:py-16 lg:px-8 z-20">
             <h2 className="text-3xl font-extrabold text-black sm:text-4xl">
               <span className="block">Take control of your</span>
               <span className="block">recurring expenses.</span>
@@ -108,7 +108,7 @@ export default function Home() {
         <div className="py-24">
           <h1 className="text-4xl font-bold">Features</h1>
         </div>
-        <div className="relative w-3/5 flex flex-row items-center justify-between">
+        <div className="relative w-3/5 flex flex-col gap-4 lg:flex-row items-center justify-between">
           <div className="drop-shadow-lg rounded-2xl w-64 p-4 py-6 bg-white">
             <div className="flex flex-col items-center justify-center">
               <div className="w-24 h-24 bg-blue-300 rounded-xl relative text-white drop-shadow-lg">

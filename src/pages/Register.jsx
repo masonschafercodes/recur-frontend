@@ -47,7 +47,7 @@ export default function Register(props) {
   };
 
   return (
-    <div className="flex flex-col max-w-md px-4 py-8 sm:px-6 md:px-8 lg:px-10 w-1/2 mx-auto my-12">
+    <div className="flex flex-col w-full lg:max-w-md px-4 py-8 sm:px-6 md:px-8 lg:px-10 mx-auto my-12">
       <div className="self-center mb-2 text-3xl font-bold text-black">
         Create a new account
       </div>

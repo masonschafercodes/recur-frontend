@@ -152,7 +152,7 @@ export default function Dashboard() {
           )}
           <Link
             to="/subscriptions/new"
-            className="fixed h-16 w-16 transition ease-in duration-200 mx-auto font-semibold lg:fixed lg:bottom-10 lg:left-1/3 lg:right-1/3 flex items-center p-4 justify-center hover:scale-90 rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 text-white border-2 border-purple-500 text-lg focus:outline-none"
+            className="h-16 w-16 transition ease-in duration-200 mx-auto font-semibold fixed bottom-10 left-3/4 lg:fixed lg:bottom-10 lg:left-1/3 lg:right-1/3 flex items-center p-4 justify-center hover:scale-90 rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 text-white border-2 border-purple-500 text-lg focus:outline-none"
           >
             <Plus />
           </Link>

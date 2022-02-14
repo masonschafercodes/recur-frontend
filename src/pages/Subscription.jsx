@@ -103,7 +103,7 @@ export default function Subscription() {
           variants={pageVariants}
         >
           <div className="w-full mx-auto flex flex-row lg:flex-col gap-5 select-none justify-center items-center bg-gradient-to-br from-slate-300 via-slate-600 to-black text-white">
-            <div className="flex flex-row py-6 w-1/2">
+            <div className="hidden lg:flex flex-row py-6 w-1/2">
               <Link to={"/subscriptions"} className="float-left">
                 <h3 className="transition ease-in duration-200 text-lg w-24 font-bold rounded-full p-2 text-center bg-white text-black hover:scale-90 hover:cursor-pointer">
                   Back
@@ -116,7 +116,7 @@ export default function Subscription() {
               </h1>
               <h1 className="text-5xl mx-1 font-bold rounded-lg pt-4">
                 {formatter.format(data.getSubscription.price)}{" "}
-                <span className="text-2xl mx-1">/ month</span>
+                <span className="hidden lg:inline text-2xl mx-1">/ month</span>
               </h1>
               <div className="mt-3">
                 {data.getSubscription.isSuspended ? (
@@ -149,7 +149,7 @@ export default function Subscription() {
             </div>
           </div>
           <div>
-            <div className="w-full mx-auto mt-8 flex flex-col lg:flex-col gap-2 select-none items-center">
+            <div className="w-3/4 mx-auto mt-8 flex flex-col lg:flex-col gap-2 select-none lg:items-center">
               <div className="flex flex-row pt-6 w-1/2">
                 <h1 className="text-xl font-semibold">Start date</h1>
               </div>
@@ -160,7 +160,7 @@ export default function Subscription() {
               </div>
             </div>
             {!data.getSubscription.isSuspended ? (
-              <div className="w-full mx-auto mt-8 flex flex-col lg:flex-col gap-2 select-none items-center">
+              <div className="w-3/4 mx-auto mt-8 flex flex-col lg:flex-col gap-2 select-none lg:items-center">
                 <div className="flex flex-row pt-6 w-1/2">
                   <h1 className="text-xl font-semibold">Yearly Spending</h1>
                 </div>
@@ -171,7 +171,7 @@ export default function Subscription() {
                 </div>
               </div>
             ) : (
-              <div className="w-full mx-auto mt-8 flex flex-col lg:flex-col gap-2 select-none items-center">
+              <div className="w-3/4 mx-auto mt-8 flex flex-col lg:flex-col gap-2 select-none lg:items-center">
                 <div className="flex flex-row pt-6 w-1/2">
                   <h1 className="text-xl font-semibold">Yearly Savings</h1>
                 </div>
