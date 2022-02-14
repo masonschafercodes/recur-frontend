@@ -40,7 +40,7 @@ export default function SubscriptionCard(props) {
   return (
     <motion.div
       whileHover={{ scale: 0.98 }}
-      className="my-1 w-3/5 mx-auto p-2 sm:p-2 flex flex-col sm:flex-row gap-5 select-none transition ease-in-out hover:cursor-pointer rounded-lg"
+      className="my-1 w-full lg:w-3/5 mx-auto p-2 sm:p-2 flex flex-col sm:flex-row gap-5 select-none transition ease-in-out hover:cursor-pointer rounded-lg"
     >
       <Link
         to={`/subscriptions/${id}`}
@@ -68,7 +68,7 @@ export default function SubscriptionCard(props) {
             ) : (
               <div className="flex flex-col justify-center">
                 <h1 className="text-lg font-semibold">{subscriptionName}</h1>
-                <span className="lg:flex items-center gap-2 text-sm hidden">
+                <span className="lg:flex items-center gap-2 text-sm flex items-center">
                   <svg
                     height="14"
                     width="14"
@@ -96,7 +96,7 @@ export default function SubscriptionCard(props) {
               </div>
             )}
             {isSuspended ? (
-              <p className="hidden lg:block uppercase bg-gray-200 text-xs font-bold p-1 rounded">
+              <p className="lg:block uppercase bg-gray-200 text-xs font-bold p-1 rounded">
                 inactive
               </p>
             ) : null}

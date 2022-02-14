@@ -111,7 +111,7 @@ export default function Subscription() {
               </Link>
             </div>
             <div className="p-12 flex items-center justify-center flex-col">
-              <h1 className="text-5xl font-semibold mx-1">
+              <h1 className="text-center text-5xl font-semibold mx-1">
                 {data.getSubscription.subscriptionName}
               </h1>
               <h1 className="text-5xl mx-1 font-bold rounded-lg pt-4">
