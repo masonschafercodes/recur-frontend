@@ -7,7 +7,7 @@ import { ApolloProvider } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
 const httpLink = createHttpLink({
-  uri: process.env.APOLLO_LINK,
+  uri: "https://recur-graphql.herokuapp.com/",
 });
 
 const authLink = setContext(() => {
