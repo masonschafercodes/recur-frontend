@@ -31,7 +31,7 @@ export default function Home() {
     animate="in"
     exit="out"
     variants={pageVariants} className="w-full">
-      <div className="flex flex-wrap items-center justify-center my-3 py-10 w-full lg:mx-auto bg-gradient-to-t from-blue-200">
+      <div className="flex flex-wrap items-center justify-center my-3 py-10 w-full lg:mx-auto bg-gradient-to-t from-indigo-300">
         <div className="overflow-hidden relative w-full lg:w-3/5 flex flex-row items-center jusify-center">
           <div className="text-start w-full lg:w-1/2 py-12 px-4 sm:px-6 lg:py-16 lg:px-8 z-20">
             <h2 className="text-3xl font-extrabold text-black sm:text-4xl">
@@ -46,7 +46,7 @@ export default function Home() {
               <div className="mt-12 inline-flex rounded-full shadow">
                 <Link
                   to='/subscriptions'
-                  className="block lg:inline-block mt-4 lg:mt-0 text-md font-semibold bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 text-white px-4 py-2 rounded-full"
+                  className="block lg:inline-block mt-4 lg:mt-0 text-md font-semibold bg-gradient-to-r from-green-300 to-purple-400 text-white px-4 py-2 rounded-full"
                 >
                   Get Started on WEB
                 </Link>
@@ -104,9 +104,9 @@ export default function Home() {
           </p>
         </div>
       </div>
-      <div className="my-12 pb-24 flex flex-col items-center justify-center w-full mx-auto font-mono bg-gradient-to-b from-purple-100 to-purple-200">
+      <div className="my-12 pb-24 flex flex-col items-center justify-center w-full mx-auto font-mono bg-gradient-to-r from-indigo-300 to-purple-400">
         <div className="py-24">
-          <h1 className="text-4xl font-bold">Features</h1>
+          <h1 className="text-4xl text-white font-bold">Features</h1>
         </div>
         <div className="relative w-3/5 flex flex-col gap-4 lg:flex-row items-center justify-between">
           <div className="drop-shadow-lg rounded-2xl w-64 p-4 py-6 bg-white">
@@ -159,9 +159,9 @@ export default function Home() {
         <div>
           <h1>Roadmap</h1>
         </div>
-        <div>
-          <h1>Give Feedback</h1>
-        </div>
+        <Link to="/open">
+          <h1 className="hover:text-gray-500">Open Stats</h1>
+        </Link>
         <div>
           <h1>Privacy</h1>
         </div>

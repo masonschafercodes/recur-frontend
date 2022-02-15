@@ -16,6 +16,7 @@ import { AnimatePresence } from "framer-motion";
 
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import UserSettings from "./pages/UserSettings";
+import OpenStats from "./pages/OpenStats";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/open" element={<OpenStats />} />
             <Route
               path="/subscriptions"
               element={

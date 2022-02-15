@@ -4,7 +4,7 @@ import { AuthContext } from "../context/auth";
 import moment from "moment";
 
 export default function UserSettings() {
-  const { user, logout } = React.useContext(AuthContext);
+  const { user } = React.useContext(AuthContext);
   return (
     <div className="flex flex-col w-full lg:max-w-md px-4 py-8 sm:px-6 md:px-8 lg:px-10 mx-auto my-12">
       <div className="self-center mb-2 text-3xl font-bold text-black">

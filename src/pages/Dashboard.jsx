@@ -28,6 +28,7 @@ export default function Dashboard() {
       if (!sub.isSuspended) {
         totalSubscriptionPrice += sub.price;
       }
+      return null;
     });
   }
 
@@ -58,7 +59,7 @@ export default function Dashboard() {
       {loading || error ? (
         <div>
           <div className="mx-auto lg:max-w-md p-2 bg-gray-200 rounded-lg sm:p-2 flex flex-col sm:flex-row gap-5 select-none justify-center items-center">
-            <h1 className="text-4xl mx-1 font-bold p-4"></h1>
+            <span className="text-4xl mx-1 font-bold p-4"></span>
           </div>
           <LoadingSkeleton />
         </div>
@@ -74,8 +75,8 @@ export default function Dashboard() {
                     ? formatter.format(totalSubscriptionPrice / 4)
                     : formatter.format(totalSubscriptionPrice * 12)}
                 </h1>
-                <div className="bg-gradient-to-b from-blue-300 via-blue-400 to-blue-500 text-white py-2 px-3 rounded-full font-semibold drop-shadow-lg">
-                  <a
+                <div className="bg-gradient-to-r from-green-300 to-purple-400 text-white py-2 px-3 rounded-full font-semibold drop-shadow-lg">
+                  <span
                     onClick={() =>
                       setSelected({
                         weekly: true,
@@ -90,8 +91,8 @@ export default function Dashboard() {
                     }
                   >
                     Weekly
-                  </a>
-                  <a
+                  </span>
+                  <span
                     onClick={() =>
                       setSelected({
                         weekly: false,
@@ -106,8 +107,8 @@ export default function Dashboard() {
                     }
                   >
                     Monthly
-                  </a>
-                  <a
+                  </span>
+                  <span
                     onClick={() =>
                       setSelected({
                         weekly: false,
@@ -122,7 +123,7 @@ export default function Dashboard() {
                     }
                   >
                     Yearly
-                  </a>
+                  </span>
                 </div>
               </div>
               <div className="mb-12">
@@ -156,7 +157,7 @@ export default function Dashboard() {
           )}
           <Link
             to="/subscriptions/new"
-            className="h-16 w-16 transition ease-in duration-200 mx-auto font-semibold fixed bottom-10 left-3/4 lg:fixed lg:bottom-10 lg:left-1/3 lg:right-1/3 flex items-center p-4 justify-center hover:scale-90 rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 text-white border-2 border-purple-500 text-lg focus:outline-none"
+            className="h-16 w-16 transition ease-in duration-200 mx-auto font-semibold fixed bottom-10 left-3/4 lg:fixed lg:bottom-10 lg:left-1/3 lg:right-1/3 flex items-center p-4 justify-center hover:scale-90 rounded-full bg-gradient-to-r from-green-300 to-purple-400 text-white text-lg focus:outline-none"
           >
             <Plus />
           </Link>

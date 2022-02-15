@@ -39,7 +39,7 @@ export default function Register(props) {
     if (context.user) {
       navigate("/", { replace: true });
     }
-  }, []);
+  });
 
   const onSubmit = (e) => {
     e.preventDefault();

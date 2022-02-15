@@ -91,7 +91,7 @@ export default function Subscription() {
       {loading || error ? (
         <div>
           <div className="my-12 w-1/2 mx-auto p-2 bg-gray-200 rounded-lg sm:p-2 flex flex-col sm:flex-row gap-5 select-none justify-center items-center">
-            <h1 className="text-4xl mx-1 font-bold p-4"></h1>
+            <span className="text-4xl mx-1 font-bold p-4"></span>
           </div>
           <LoadingSkeleton />
         </div>
@@ -102,7 +102,7 @@ export default function Subscription() {
           exit="out"
           variants={pageVariants}
         >
-          <div className="w-full mx-auto flex flex-row lg:flex-col gap-5 select-none justify-center items-center bg-gradient-to-br from-slate-300 via-slate-600 to-black text-white">
+          <div className="w-full mx-auto flex flex-row lg:flex-col gap-5 select-none justify-center items-center bg-gradient-to-r from-gray-700 via-gray-900 to-black text-white">
             <div className="hidden lg:flex flex-row py-6 w-1/2">
               <Link to={"/subscriptions"} className="float-left">
                 <h3 className="transition ease-in duration-200 text-lg w-24 font-bold rounded-full p-2 text-center bg-white text-black hover:scale-90 hover:cursor-pointer">
