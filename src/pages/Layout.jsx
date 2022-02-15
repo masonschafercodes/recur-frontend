@@ -1,14 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { DollarSign } from "react-feather";
+import { Settings, LogOut, Box, User } from "react-feather";
 
 import { AuthContext } from "../context/auth";
 
 const Layout = () => {
   const { user, logout } = React.useContext(AuthContext);
+  const [isOpen, setIsOpen] = React.useState(false);
 
   const Layout = user ? (
-    <nav className="hideen lg:flex bg-slate-50 flex-wrap items-center justify-between my-3 w-3/5 mx-auto p-2 font-mono">
+    <nav className="hidden lg:flex bg-slate-50 flex-wrap items-center justify-between my-3 w-3/5 mx-auto p-2 font-mono">
       <div className="navbar-menu hidden lg:order-1 lg:block w-full lg:w-2/5">
         <Link
           className="block lg:inline-block mt-4 lg:mt-0 mr-10 text-purple-900 text-xl font-semibold hover:text-purple-600"
@@ -46,20 +47,52 @@ const Layout = () => {
           </div>
         </Link>
       </div>
-      <div className="navbar-menu hidden lg:order-3 lg:block w-full lg:w-1/2 lg:text-right">
-        <Link
-          className="block lg:inline-block mt-4 lg:mt-0 mr-10 text-purple-900 text-md hover:text-indigo-600"
-          to="/subscriptions"
+      <div className="navbar-menu hidden relative lg:order-3 lg:flex flex-start items-center justify-end w-full lg:w-1/2 lg:text-right">
+        <div
+          className="flex items-center justify-center h-10 w-10 transition ease-in duration-200 lg:mt-0 hover:bg-gray-200 text-black rounded-full"
+          onClick={() => setIsOpen(!isOpen)}
         >
-          <strong>Dashboard</strong>
-        </Link>
-        <Link
-          className="transition ease-in duration-200 block lg:inline-block mt-4 lg:mt-0 text-md font-semibold bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 text-white px-4 py-1 hover:scale-90 rounded-full"
-          onClick={logout}
-          to="/"
-        >
-          Logout
-        </Link>
+          <User size={20} />
+        </div>
+        {isOpen ? (
+          <div className="absolute top-10">
+            <div className="flex flex-col justify-center rounded-lg shadow-lg">
+              <Link
+                to="/profile"
+                onClick={() => setIsOpen(!isOpen)}
+                className="p-4 flex flex-row items-center justify-between hover:bg-gray-100 hover:cursor-pointer"
+              >
+                <p>Settings</p>
+                <Settings size={14} />
+              </Link>
+              <Link
+                to="/subscriptions"
+                onClick={() => setIsOpen(!isOpen)}
+                className="p-4 flex flex-row items-center justify-between hover:bg-gray-100 hover:cursor-pointer"
+              >
+                <p>Dashboard</p>
+                <Box size={14} />
+              </Link>
+              <div className="border-t-2 p-3 flex flex-row hover:bg-gray-100 hover:cursor-pointer">
+                <p>Send Feedback</p>
+              </div>
+              <div className="p-3 flex flex-row items-center justify-between hover:bg-gray-100 hover:cursor-pointer">
+                <p>Buy me a coffee</p>
+              </div>
+              <Link
+                to="/"
+                onClick={() => {
+                  setIsOpen(!isOpen);
+                  logout();
+                }}
+                className="border-t-2 p-4 flex flex-row items-center justify-between hover:bg-gray-100 hover:cursor-pointer"
+              >
+                <p className="font-bold">Logout</p>
+                <LogOut size={14} />
+              </Link>
+            </div>
+          </div>
+        ) : null}
       </div>
     </nav>
   ) : (

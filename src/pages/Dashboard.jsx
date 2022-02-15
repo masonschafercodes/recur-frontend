@@ -57,7 +57,7 @@ export default function Dashboard() {
     >
       {loading || error ? (
         <div>
-          <div className="w-1/2 mx-auto p-2 bg-gray-200 rounded-lg sm:p-2 flex flex-col sm:flex-row gap-5 select-none justify-center items-center">
+          <div className="mx-auto lg:max-w-md p-2 bg-gray-200 rounded-lg sm:p-2 flex flex-col sm:flex-row gap-5 select-none justify-center items-center">
             <h1 className="text-4xl mx-1 font-bold p-4"></h1>
           </div>
           <LoadingSkeleton />
@@ -66,13 +66,15 @@ export default function Dashboard() {
         <div>
           {data.getUserSubscriptions.length > 0 ? (
             <div>
-              <div className="w-1/2 mx-auto p-2 sm:p-2 flex flex-col gap-5 select-none justify-center items-center">
+              <div className="mx-auto my-14 p-2 sm:p-2 flex flex-col gap-5 select-none justify-center items-center">
                 <h1 className="text-5xl mx-1 font-bold rounded-lg">
-                  {selected.monthly ? formatter.format(totalSubscriptionPrice) : selected.weekly ? formatter.format(totalSubscriptionPrice / 4) : formatter.format(totalSubscriptionPrice * 12)}
+                  {selected.monthly
+                    ? formatter.format(totalSubscriptionPrice)
+                    : selected.weekly
+                    ? formatter.format(totalSubscriptionPrice / 4)
+                    : formatter.format(totalSubscriptionPrice * 12)}
                 </h1>
-                <div
-                  className="bg-gradient-to-b from-blue-300 via-blue-400 to-blue-500 text-white py-2 px-3 rounded-full font-semibold drop-shadow-lg"
-                >
+                <div className="bg-gradient-to-b from-blue-300 via-blue-400 to-blue-500 text-white py-2 px-3 rounded-full font-semibold drop-shadow-lg">
                   <a
                     onClick={() =>
                       setSelected({
@@ -123,10 +125,12 @@ export default function Dashboard() {
                   </a>
                 </div>
               </div>
-              {data.getUserSubscriptions &&
-                data.getUserSubscriptions.map((sub) => (
-                  <SubscriptionCard sub={sub} key={sub.id} />
-                ))}
+              <div className="mb-12">
+                {data.getUserSubscriptions &&
+                  data.getUserSubscriptions.map((sub) => (
+                    <SubscriptionCard sub={sub} key={sub.id} />
+                  ))}
+              </div>
             </div>
           ) : (
             <div>

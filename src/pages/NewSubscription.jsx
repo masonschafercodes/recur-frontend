@@ -151,6 +151,7 @@ const CREATE_SUBSCRIPTION = gql`
       price
       createdAt
       firstPayment
+      isSuspended
     }
   }
 `;

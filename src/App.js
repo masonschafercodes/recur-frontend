@@ -15,6 +15,7 @@ import { AuthProvider } from "./context/auth";
 import { AnimatePresence } from "framer-motion";
 
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import UserSettings from "./pages/UserSettings";
 
 function App() {
   return (
@@ -34,12 +35,27 @@ function App() {
                 </RequireAuth>
               }
             />
-            <Route path="/subscriptions/:subscriptionId" element={<RequireAuth><Subscription /></RequireAuth>} />
+            <Route
+              path="/subscriptions/:subscriptionId"
+              element={
+                <RequireAuth>
+                  <Subscription />
+                </RequireAuth>
+              }
+            />
             <Route
               path="/subscriptions/new"
               element={
                 <RequireAuth>
                   <NewSubscription />
+                </RequireAuth>
+              }
+            />
+            <Route
+              path="/profile"
+              element={
+                <RequireAuth>
+                  <UserSettings />
                 </RequireAuth>
               }
             />

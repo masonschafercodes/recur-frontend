@@ -23,15 +23,6 @@ export default function SubscriptionCard(props) {
     currency: "USD",
   });
 
-  const backgrounds = {
-    blueToPurple:
-      "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fih1.redbubble.net%2Fimage.204977056.3569%2Fpp%2C550x550.u4.jpg&f=1&nofb=1",
-    blueToRed:
-      "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.hamiltonscompounding.com.au%2Fwp-content%2Fuploads%2Fgreen-to-blue-gradient.jpg&f=1&nofb=1",
-    multiColor:
-      "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flessandmore.com%2Fwp-content%2Fuploads%2F2016%2F08%2FCOVER.jpg&f=1&nofb=1",
-  };
-
   const getMonthsOfset = (date, date2) => {
     const dateDif = new Date(date) - new Date(date2);
     return Math.ceil(dateDif / 2629746000);
@@ -40,7 +31,7 @@ export default function SubscriptionCard(props) {
   return (
     <motion.div
       whileHover={{ scale: 0.98 }}
-      className="my-1 w-full lg:w-3/5 mx-auto p-2 sm:p-2 flex flex-col sm:flex-row gap-5 select-none transition ease-in-out hover:cursor-pointer rounded-lg"
+      className="relative my-1 w-full lg:w-3/5 mx-auto p-2 sm:p-2 flex flex-col sm:flex-row gap-5 select-none transition ease-in-out hover:cursor-pointer rounded-lg"
     >
       <Link
         to={`/subscriptions/${id}`}
@@ -50,13 +41,7 @@ export default function SubscriptionCard(props) {
           <div className="p-2 bg-blue-200 rounded-[14px] hidden 2xl:flex">
             <img
               alt="profil"
-              src={
-                backgrounds[
-                  Object.keys(backgrounds)[
-                    Math.floor(Math.random() * Object.keys(backgrounds).length)
-                  ]
-                ]
-              }
+              src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fih1.redbubble.net%2Fimage.204977056.3569%2Fpp%2C550x550.u4.jpg&f=1&nofb=1"
               className="mx-auto object-cover overflow-hidden rounded-full h-10 w-12"
             />
           </div>
@@ -66,7 +51,7 @@ export default function SubscriptionCard(props) {
                 {subscriptionName}
               </h1>
             ) : (
-              <div className="flex flex-col justify-center">
+              <div className="z-0 flex flex-col justify-center">
                 <h1 className="text-lg font-semibold">{subscriptionName}</h1>
                 <span className="lg:flex items-center gap-2 text-sm flex items-center">
                   <svg
@@ -80,9 +65,9 @@ export default function SubscriptionCard(props) {
                         x2="0.35"
                         y2="1"
                       >
-                        <stop offset="0%" stop-color="var(--color-stop)" />
-                        <stop offset="30%" stop-color="var(--color-stop)" />
-                        <stop offset="100%" stop-color="var(--color-bot)" />
+                        <stop offset="0%" stopColor="var(--color-stop)" />
+                        <stop offset="30%" stopColor="var(--color-stop)" />
+                        <stop offset="100%" stopColor="var(--color-bot)" />
                       </linearGradient>
                     </defs>
                     <circle cx="7" cy="7" r="7" className="gradient-bg" />
