@@ -45,7 +45,7 @@ export default function Dashboard() {
 
   const formatter = new Intl.NumberFormat("en-US", {
     style: "currency",
-    currency: "USD",
+    currency: "CAN",
   });
 
   return (
@@ -66,7 +66,7 @@ export default function Dashboard() {
         <div>
           {data.getUserSubscriptions.length > 0 ? (
             <div>
-              <div className="mx-auto my-14 p-2 sm:p-2 flex flex-col gap-5 select-none justify-center items-center">
+              <div className="mx-auto p-2 sm:p-2 flex flex-col gap-5 select-none justify-center items-center">
                 <h1 className="text-5xl mx-1 font-bold rounded-lg">
                   {selected.monthly
                     ? formatter.format(totalSubscriptionPrice)

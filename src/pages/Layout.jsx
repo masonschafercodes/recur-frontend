@@ -55,12 +55,12 @@ const Layout = () => {
           <User size={20} />
         </div>
         {isOpen ? (
-          <div className="absolute top-10">
+          <div className="z-50 absolute top-10 bg-white rounded-lg shadow-lg">
             <div className="flex flex-col justify-center rounded-lg shadow-lg">
               <Link
                 to="/profile"
                 onClick={() => setIsOpen(!isOpen)}
-                className="p-4 flex flex-row items-center justify-between hover:bg-gray-100 hover:cursor-pointer"
+                className="p-4 flex flex-row items-center justify-between rounded-lg hover:bg-gray-100 hover:cursor-pointer"
               >
                 <p>Settings</p>
                 <Settings size={14} />
@@ -85,7 +85,7 @@ const Layout = () => {
                   setIsOpen(!isOpen);
                   logout();
                 }}
-                className="border-t-2 p-4 flex flex-row items-center justify-between hover:bg-gray-100 hover:cursor-pointer"
+                className="border-t-2 p-4 flex flex-row items-center justify-between hover:bg-gray-100 rounded-lg hover:cursor-pointer"
               >
                 <p className="font-bold">Logout</p>
                 <LogOut size={14} />
