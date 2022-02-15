@@ -45,7 +45,7 @@ export default function Dashboard() {
 
   const formatter = new Intl.NumberFormat("en-US", {
     style: "currency",
-    currency: "CAN",
+    currency: "USD",
   });
 
   return (

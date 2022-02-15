@@ -68,7 +68,7 @@ export default function Subscription() {
 
   const formatter = new Intl.NumberFormat("en-US", {
     style: "currency",
-    currency: "CAN",
+    currency: "USD",
   });
 
   const onClick = (e) => {
