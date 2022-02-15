@@ -47,6 +47,7 @@ export default function UserSettings() {
               name="email"
               placeholder="email"
               defaultValue={user.email}
+              disabled
             />
           </div>
         </div>
