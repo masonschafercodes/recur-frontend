@@ -6,18 +6,14 @@ import React from "react";
 import { AuthContext } from "../context/auth";
 import { Oval } from "react-loader-spinner";
 
+import { useForm } from "react-hook-form";
+
 export default function Login() {
   const context = React.useContext(AuthContext);
+  const [values, setValues] = React.useState({});
   const [errors, setErrors] = React.useState({});
-  const [values, setValues] = React.useState({
-    username: "",
-    password: "",
-  });
+  const {register, handleSubmit} = useForm();
   const navigate = useNavigate();
-
-  const onChange = (e) => {
-    setValues({ ...values, [e.target.name]: e.target.value });
-  };
 
   const [loginUser, { loading }] = useMutation(LOGIN_USER, {
     update(_, result) {
@@ -34,12 +30,12 @@ export default function Login() {
 
   React.useEffect(() => {
     if (context.user) {
-      navigate("/", { replace: true });
+      navigate("/subscriptions", { replace: true });
     }
   });
 
-  const onSubmit = (e) => {
-    e.preventDefault();
+  const onSubmit = (data) => {
+    setValues(data);
     loginUser();
   };
 
@@ -55,7 +51,7 @@ export default function Login() {
         </a>
       </span>
       <div className="p-6 mt-2">
-        <form onSubmit={onSubmit}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div className="flex flex-col mb-2">
             <div className=" relative mb-2">
               <label className="ml-2 mb-2 font-bold text-base">Username</label>
@@ -65,8 +61,7 @@ export default function Login() {
                 className="mb-2 transition ease-in duration-200 bg-gray-200 hover:bg-gray-100 rounded-full border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                 name="username"
                 placeholder="username"
-                value={values.username}
-                onChange={onChange}
+                {...register("username")}
               />
             </div>
             <div className=" relative ">
@@ -77,8 +72,7 @@ export default function Login() {
                 className="mb-2 transition ease-in duration-200 bg-gray-200 hover:bg-gray-100 rounded-full border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                 name="password"
                 placeholder="password"
-                value={values.password}
-                onChange={onChange}
+                {...register("password")}
               />
             </div>
           </div>
