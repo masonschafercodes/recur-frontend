@@ -6,21 +6,15 @@ import React from "react";
 import { AuthContext } from "../context/auth";
 import { Oval } from "react-loader-spinner";
 
+import { useForm } from "react-hook-form";
+
 
 export default function Register(props) {
   const context = React.useContext(AuthContext);
   const [errors, setErrors] = React.useState({});
-  const [values, setValues] = React.useState({
-    username: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-  });
+  const [values, setValues] = React.useState({});
   const navigate = useNavigate();
-
-  const onChange = (e) => {
-    setValues({ ...values, [e.target.name]: e.target.value });
-  };
+  const {register, handleSubmit} = useForm();
 
   const [addUser, {loading}] = useMutation(REGISTER_USER, {
     update(_, result) {
@@ -41,8 +35,8 @@ export default function Register(props) {
     }
   });
 
-  const onSubmit = (e) => {
-    e.preventDefault();
+  const onSubmit = (data) => {
+    setValues(data);
     addUser();
   };
 
@@ -58,7 +52,7 @@ export default function Register(props) {
         </a>
       </span>
       <div className="p-6 mt-2">
-        <form onSubmit={onSubmit}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div className="flex flex-col mb-2">
             <div className=" relative ">
               <label className="ml-2 mb-2 font-bold text-base">Username</label>
@@ -68,8 +62,7 @@ export default function Register(props) {
                 className="mb-2 transition ease-in duration-200 bg-gray-200 hover:bg-gray-100 rounded-full border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                 name="username"
                 placeholder="username"
-                value={values.username}
-                onChange={onChange}
+                {...register('username')}
               />
             </div>
           </div>
@@ -82,8 +75,7 @@ export default function Register(props) {
                 className="mb-2 transition ease-in duration-200 bg-gray-200 hover:bg-gray-100 rounded-full border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                 placeholder="Email"
                 name="email"
-                value={values.email}
-                onChange={onChange}
+                {...register('email')}
               />
             </div>
           </div>
@@ -96,8 +88,7 @@ export default function Register(props) {
                 className="mb-2 transition ease-in duration-200 bg-gray-200 hover:bg-gray-100 rounded-full border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                 name="password"
                 placeholder="password"
-                value={values.password}
-                onChange={onChange}
+                {...register('password')}
               />
             </div>
           </div>
@@ -112,8 +103,7 @@ export default function Register(props) {
                 className="mb-2 transition ease-in duration-200 bg-gray-200 hover:bg-gray-100 rounded-full border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                 name="confirmPassword"
                 placeholder="Confirm"
-                value={values.confirmPassword}
-                onChange={onChange}
+                {...register('confirmPassword')}
               />
             </div>
           </div>
