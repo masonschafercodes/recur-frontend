@@ -8,7 +8,7 @@
 1. Clone the repo
 `https://github.com/masonschafercodes/recur-frontend.git`
 2. Checkout the development branch
-`git checkout development`
+`git checkout dev`
 3. create an .env file at the root of the project by copying the `.env.example` from the project and adding your graphql link value
 4. Run `yarn` ~ This will install all of the frontend deps that you need to begin working on a feature
 5. Run `yarn dev` ~ This will start the server so you can access it at [http://localhost:3000](http://localhost:3000)
