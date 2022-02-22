@@ -1,5 +1,4 @@
-# Welcome to recurrence
-# Getting Started
+# Recurrence
 
 ## Prerequisites
 - [Node.js](https://nodejs.org/en/)
