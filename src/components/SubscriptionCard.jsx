@@ -3,25 +3,12 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import moment from "moment";
 
-const pageVariants = {
-  initial: {
-    opacity: 0,
-  },
-  in: {
-    opacity: 1,
-  },
-  out: {
-    opacity: 0,
-  },
-};
+import pageVariants from "../util/pageVariants";
+
+import formatter from "../util/currencyFormatter";
 
 export default function SubscriptionCard(props) {
   const { id, subscriptionName, price, isSuspended, firstPayment } = props.sub;
-
-  const formatter = new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-  });
 
   const getMonthsOfset = (date, date2) => {
     const dateDif = new Date(date) - new Date(date2);
@@ -81,7 +68,7 @@ export default function SubscriptionCard(props) {
               </div>
             )}
             {isSuspended ? (
-              <p className="lg:block uppercase bg-gray-200 text-xs font-bold p-1 rounded">
+              <p className="lg:block uppercase bg-gray-200 text-xs font-bold p-1 rounded ml-2">
                 inactive
               </p>
             ) : null}
@@ -94,7 +81,13 @@ export default function SubscriptionCard(props) {
               variants={pageVariants}
               className="p-3 font-semibold text-lg"
             >
-              {formatter.format(price)}
+              {props.selected.monthly
+                ? formatter.format(price)
+                : props.selected.yearly
+                ? formatter.format(price * 12)
+                : props.selected.weekly
+                ? formatter.format(price / 4)
+                : "-"}
             </motion.p>
           </div>
         </div>

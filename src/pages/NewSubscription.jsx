@@ -6,10 +6,12 @@ import { FETCH_USER_SUBSCRIPTIONS_QUERY } from "../util/graphql";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
-import { AuthContext } from "../context/auth";
+import { useUser } from "../context/auth";
+
+import pageVariants from "../util/pageVariants";
 
 export default function NewSubscription() {
-  const { user } = React.useContext(AuthContext);
+  const { user } = useUser();
   const [values, setValues] = React.useState({
     subscription: "",
     price: "",
@@ -52,18 +54,6 @@ export default function NewSubscription() {
   const onSubmit = (e) => {
     e.preventDefault();
     createSubscription();
-  };
-
-  const pageVariants = {
-    initial: {
-      opacity: 0,
-    },
-    in: {
-      opacity: 1,
-    },
-    out: {
-      opacity: 0,
-    },
   };
 
   return (

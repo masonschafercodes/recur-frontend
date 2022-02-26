@@ -8,11 +8,14 @@ import { Plus } from "react-feather";
 import LoadingSkeleton from "../components/LoadingSkeleton";
 import SubscriptionCard from "../components/SubscriptionCard";
 
-import { AuthContext } from "../context/auth";
+import { useUser } from "../context/auth";
+
+import pageVariants from "../util/pageVariants";
+import formatter from "../util/currencyFormatter";
 
 export default function Dashboard() {
   let totalSubscriptionPrice = 0.0;
-  const { user } = React.useContext(AuthContext);
+  const { user } = useUser();
   const [selected, setSelected] = React.useState({
     weekly: false,
     monthly: true,
@@ -32,21 +35,12 @@ export default function Dashboard() {
     });
   }
 
-  const pageVariants = {
-    initial: {
-      opacity: 0,
-    },
-    in: {
-      opacity: 1,
-    },
-    out: {
-      opacity: 0,
-    },
-  };
+  let userData = [];
 
-  const formatter = new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
+  if (data) userData = [...data.getUserSubscriptions];
+
+  userData.sort((a, b) => {
+    return a.isSuspended !== b.isSuspended;
   });
 
   return (
@@ -65,7 +59,7 @@ export default function Dashboard() {
         </div>
       ) : (
         <div>
-          {data.getUserSubscriptions.length > 0 ? (
+          {userData.length > 0 ? (
             <div>
               <div className="mx-auto p-2 sm:p-2 flex flex-col gap-5 select-none justify-center items-center">
                 <h1 className="text-5xl mx-1 font-bold rounded-lg">
@@ -127,9 +121,9 @@ export default function Dashboard() {
                 </div>
               </div>
               <div className="mb-12">
-                {data.getUserSubscriptions &&
-                  data.getUserSubscriptions.map((sub) => (
-                    <SubscriptionCard sub={sub} key={sub.id} />
+                {userData &&
+                  userData.map((sub) => (
+                    <SubscriptionCard sub={sub} selected={selected} key={sub.id} />
                   ))}
               </div>
             </div>
