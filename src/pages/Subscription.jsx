@@ -5,26 +5,18 @@ import { gql } from "graphql-tag";
 import LoadingSkeleton from "../components/LoadingSkeleton";
 import { Link, useNavigate } from "react-router-dom";
 
-import { AuthContext } from "../context/auth";
+import { useUser } from "../context/auth";
+
 import DeleteModal from "../components/DeleteModal";
 import { motion } from "framer-motion";
 import { Pause, Play, Circle } from "react-feather";
 import moment from "moment";
 
-const pageVariants = {
-  initial: {
-    opacity: 0,
-  },
-  in: {
-    opacity: 1,
-  },
-  out: {
-    opacity: 0,
-  },
-};
+import pageVariants from "../util/pageVariants";
+import formatter from "../util/currencyFormatter";
 
 export default function Subscription() {
-  const { user } = React.useContext(AuthContext);
+  const { user } = useUser();
   const navigate = useNavigate();
   let params = useParams();
 
@@ -65,11 +57,6 @@ export default function Subscription() {
       },
     }
   );
-
-  const formatter = new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-  });
 
   const onClick = (e) => {
     e.preventDefault();

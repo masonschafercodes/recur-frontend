@@ -59,4 +59,12 @@ function AuthProvider(props) {
     )
 }
 
-export { AuthContext, AuthProvider };
+function useUser() {
+    const context = React.useContext(AuthContext);
+    if (context === undefined) {
+        throw new Error('useUser must be used within a AuthProvider');
+    }
+    return context;
+}
+
+export { AuthProvider, useUser };

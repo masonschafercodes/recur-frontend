@@ -2,17 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { gql, useQuery } from "@apollo/client";
 
-const pageVariants = {
-  initial: {
-    opacity: 0,
-  },
-  in: {
-    opacity: 1,
-  },
-  out: {
-    opacity: 0,
-  },
-};
+import pageVariants from "../util/pageVariants";
 
 export default function OpenStats() {
   const { loading, error, data } = useQuery(FETCH_SUBSCRIPTIONS_QUERY);

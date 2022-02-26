@@ -10,19 +10,7 @@ import {
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
-
-const pageVariants = {
-  initial: {
-    opacity: 0,
-  },
-  in: {
-    opacity: 1,
-  },
-  out: {
-    opacity: 0,
-  },
-};
-
+import pageVariants from "../util/pageVariants";
 
 export default function Home() {
   return (

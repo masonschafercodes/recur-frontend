@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Settings, LogOut, Box, User } from "react-feather";
 
-import { AuthContext } from "../context/auth";
+import { useUser } from "../context/auth";
 
 const Layout = () => {
-  const { user, logout } = React.useContext(AuthContext);
+  const { user, logout } = useUser();
   const [isOpen, setIsOpen] = React.useState(false);
 
   const Layout = user ? (

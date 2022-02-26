@@ -3,13 +3,13 @@ import { useMutation } from "@apollo/client";
 import { useNavigate } from "react-router-dom";
 import React from "react";
 
-import { AuthContext } from "../context/auth";
+import { useUser } from "../context/auth";
 import { Oval } from "react-loader-spinner";
 
 import { useForm } from "react-hook-form";
 
 export default function Login() {
-  const context = React.useContext(AuthContext);
+  const context = useUser();
   const [values, setValues] = React.useState({});
   const [errors, setErrors] = React.useState({});
   const {register, handleSubmit} = useForm();
