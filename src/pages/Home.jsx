@@ -19,22 +19,21 @@ export default function Home() {
     animate="in"
     exit="out"
     variants={pageVariants} className="w-full">
-      <div className="flex flex-wrap items-center justify-center my-3 py-10 w-full lg:mx-auto bg-gradient-to-t from-indigo-300">
-        <div className="overflow-hidden relative w-full lg:w-3/5 flex flex-row items-center jusify-center">
+      <div className="flex flex-wrap items-center justify-center my-3 py-10 w-full lg:mx-auto bg-gradient-to-t from-rose-200">
+        <div className="overflow-hidden relative w-full md:w-4/5 lg:w-3/5 flex flex-row items-center jusify-center">
           <div className="text-start w-full lg:w-1/2 py-12 px-4 sm:px-6 lg:py-16 lg:px-8 z-20">
-            <h2 className="text-3xl font-extrabold text-black sm:text-4xl">
+            <h2 className="text-3xl font-extrabold text-gray-800 sm:text-4xl">
               <span className="block">Take control of your</span>
               <span className="block">recurring expenses.</span>
             </h2>
             <p className="text-xl mt-4 font-light">
-              With budgeting made easy, you can save time and worry about more
-              important things like friends and family.
+              Using recurrence, you can easily track your expenses and spend less time worrying about the details.
             </p>
             <div className="lg:mt-0 lg:flex-shrink-0">
               <div className="mt-12 inline-flex rounded-full shadow">
                 <Link
                   to='/subscriptions'
-                  className="block lg:inline-block mt-4 lg:mt-0 text-md font-semibold bg-gradient-to-r from-green-300 to-purple-400 text-white px-4 py-2 rounded-full"
+                  className="block lg:inline-block mt-4 lg:mt-0 text-md font-semibold bg-gradient-to-tr from-red-300 via-red-200 to-fuchsia-400 text-white px-4 py-2 rounded-full"
                 >
                   Get Started on WEB
                 </Link>
@@ -42,8 +41,8 @@ export default function Home() {
             </div>
           </div>
           <img
-            src="https://i.ibb.co/gSfynfR/undraw-Mobile-app-re-catg-removebg-preview.png"
-            className="absolute h-full max-w-1/2 hidden lg:block right-0 top-0"
+            src="https://i.ibb.co/JmSmXsc/undraw-app-data-re-vg5c-1.png"
+            className="absolute h-full max-w-1/2 hidden 2xl:block right-0 top-0"
             alt="undraw-Mobile-app-re-catg-removebg-preview"
           />
         </div>
@@ -59,8 +58,7 @@ export default function Home() {
             You are wasting money
           </h3>
           <p className="text-md text-gray-500 py-4">
-            No more forgetting to cancel a subscription or overpaying for one
-            you no longer use!
+            No longer forget about those pesky subscriptions that get lost in your inbox.
           </p>
         </div>
         <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4 mt-6 sm:mt-16 md:mt-20 lg:mt-24 bg-white drop-shadow-lg rounded-lg">
@@ -73,8 +71,7 @@ export default function Home() {
             Track what matters most
           </h3>
           <p className="text-md text-gray-500 py-4">
-            With budgeting made easy, you can save time and worry about more
-            important things like friends and family.
+            Track the most important details of your recurring expenses.
           </p>
         </div>
         <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 mt-6  px-4 py-4 bg-white drop-shadow-lg rounded-lg">
@@ -87,8 +84,7 @@ export default function Home() {
             The one place for subscriptions
           </h3>
           <p className="text-md  text-gray-500 py-4">
-            Join the hundreds of people who are tracking their subscriptions
-            with Recur.
+            Easily manage your subscriptions from one place. No more email, checking your bank, and answering phone calls regarding your subscriptions.
           </p>
         </div>
       </div>

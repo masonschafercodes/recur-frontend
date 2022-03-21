@@ -25,13 +25,7 @@ export default function SubscriptionCard(props) {
         className="flex flex-col flex-1 gap-5 sm:p-2"
       >
         <div className="flex flex-1 gap-3 transition ease-in-out duration-200 hover:text-gray-600 items-center">
-          <div className="p-2 bg-blue-200 rounded-[14px] hidden 2xl:flex">
-            <img
-              alt="profil"
-              src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fih1.redbubble.net%2Fimage.204977056.3569%2Fpp%2C550x550.u4.jpg&f=1&nofb=1"
-              className="mx-auto object-cover overflow-hidden rounded-full h-10 w-12"
-            />
-          </div>
+          <div className="p-2 bg-gradient-to-tr from-rose-50 via-red-200 to-fuchsia-200 rounded-[14px] w-12 h-12 hidden 2xl:flex"></div>
           <div className="flex items-center w-full h-12 rounded-2xl">
             {isSuspended ? (
               <h1 className="text-gray-400 text-lg font-semibold">
@@ -40,7 +34,7 @@ export default function SubscriptionCard(props) {
             ) : (
               <div className="z-0 flex flex-col justify-center">
                 <h1 className="text-lg font-semibold">{subscriptionName}</h1>
-                <span className="lg:flex items-center gap-2 text-sm flex items-center">
+                <span className="lg:flex gap-2 text-sm flex items-center">
                   <svg
                     height="14"
                     width="14"

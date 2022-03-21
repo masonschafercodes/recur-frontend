@@ -58,7 +58,7 @@ export default function Login() {
               <input
                 type="text"
                 id="create-account-username"
-                className="mb-2 transition ease-in duration-200 bg-gray-200 hover:bg-gray-100 rounded-full border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                className="mb-2 transition ease-in duration-200 bg-white hover:bg-gray-100 rounded-full border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                 name="username"
                 placeholder="username"
                 {...register("username")}
@@ -69,7 +69,7 @@ export default function Login() {
               <input
                 type="password"
                 id="create-account-password"
-                className="mb-2 transition ease-in duration-200 bg-gray-200 hover:bg-gray-100 rounded-full border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                className="mb-2 transition ease-in duration-200 bg-white hover:bg-gray-100 rounded-full border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                 name="password"
                 placeholder="password"
                 {...register("password")}
@@ -80,13 +80,13 @@ export default function Login() {
             {!loading ? (
               <button
                 type="submit"
-                className="my-3 py-2 px-4 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 text-white focus:ring-purple-500 focus:ring-offset-purple-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-full "
+                className="my-3 py-2 px-4 bg-gradient-to-tr from-rose-50 via-red-200 to-fuchsia-200 text-white focus:ring-purple-500 focus:ring-offset-purple-200 w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-full "
               >
                 Login
               </button>
             ) : (
               <span
-                className="flex items-center justify-center my-3 py-2 px-4 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 text-white focus:ring-purple-500 focus:ring-offset-purple-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-full "
+                className="flex items-center justify-center my-3 py-2 px-4 bg-gradient-to-tr from-rose-50 via-red-200 to-fuchsia-200 text-white focus:ring-purple-500 focus:ring-offset-purple-200 w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-full "
               >
                 <Oval color="white" height={18} width={18} />
               </span>
